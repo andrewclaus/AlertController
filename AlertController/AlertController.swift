@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlertController: UIAlertController {
+publich class AlertController: UIAlertController {
     private static var alertWindows = [UIWindow]()
     private var alertWindow: UIWindow!
     private var completion: ((Int, String) -> Void)?

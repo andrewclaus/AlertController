@@ -8,8 +8,6 @@
 
 import Foundation
 
-struct K {
-    struct Alert {
-        static let DefaultTitle = "Attention"
-    }
+public struct K {
+    public static let DefaultTitle = "Attention"
 }

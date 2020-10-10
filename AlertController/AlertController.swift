@@ -8,13 +8,13 @@
 
 import UIKit
 
-publich class AlertController: UIAlertController {
+public class AlertController: UIAlertController {
     private static var alertWindows = [UIWindow]()
     private var alertWindow: UIWindow!
     private var completion: ((Int, String) -> Void)?
     private var confirmation: ((Bool) -> Void)?
     
-    static func alert(_ message: String, title: String = K.Alert.DefaultTitle, buttonTitles: [String] = ["OK"], completion: ((Int, String)->())? = nil) {
+    public static func alert(_ message: String, title: String = K.DefaultTitle, buttonTitles: [String] = ["OK"], completion: ((Int, String)->())? = nil) {
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
         for title in buttonTitles {
@@ -27,7 +27,7 @@ publich class AlertController: UIAlertController {
         alert.show()
     }
     
-    static func alert(_ message: String, title: String = K.Alert.DefaultTitle, actions: [UIAlertAction]) {
+    public static func alert(_ message: String, title: String = K.DefaultTitle, actions: [UIAlertAction]) {
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
         for action in actions {
@@ -37,7 +37,7 @@ publich class AlertController: UIAlertController {
         alert.show()
     }
     
-    static func confirm(_ message: String, title: String = K.Alert.DefaultTitle, completion: ((Bool)->())?) {
+    public static func confirm(_ message: String, title: String = K.DefaultTitle, completion: ((Bool)->())?) {
         
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -54,7 +54,7 @@ publich class AlertController: UIAlertController {
         alert.show()
     }
     
-    func show(animated: Bool = true) {
+    public func show(animated: Bool = true) {
         
         guard let topWindow = UIApplication.shared.windows.last else {
             fatalError("Unable to show alert if there are no active windows in the application!")

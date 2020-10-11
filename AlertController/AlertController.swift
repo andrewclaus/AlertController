@@ -14,7 +14,7 @@ public class AlertController: UIAlertController {
     private var completion: ((Int, String) -> Void)?
     private var confirmation: ((Bool) -> Void)?
     
-    public static func alert(_ message: String, title: String = K.DefaultTitle, buttonTitles: [String] = ["OK"], completion: ((Int, String)->())? = nil) {
+    public class func alert(_ message: String, title: String = K.DefaultTitle, buttonTitles: [String] = ["OK"], completion: ((Int, String)->())? = nil) {
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
         for title in buttonTitles {
@@ -27,7 +27,7 @@ public class AlertController: UIAlertController {
         alert.show()
     }
     
-    public static func alert(_ message: String, title: String = K.DefaultTitle, actions: [UIAlertAction]) {
+    public class func alert(_ message: String, title: String = K.DefaultTitle, actions: [UIAlertAction]) {
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
         for action in actions {
@@ -37,7 +37,7 @@ public class AlertController: UIAlertController {
         alert.show()
     }
     
-    public static func confirm(_ message: String, title: String = K.DefaultTitle, completion: ((Bool)->())?) {
+    public class func confirm(_ message: String, title: String = K.DefaultTitle, completion: ((Bool)->())?) {
         
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
